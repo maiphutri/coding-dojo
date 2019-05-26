@@ -1,0 +1,176 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+div.container {
+  margin: 12px;
+  height: 988px;
+  background: linear-gradient(to right bottom, #183d79, #387be2)
+}
+
+  header div.brand-logo {
+    margin-left: 20px;
+    width: 870px;
+    display: inline-block;
+  }
+
+  header div.search {
+    vertical-align: top;
+    height: 168px;;
+    width: 342px;
+    display: inline-block;
+    text-align: center;
+    margin-top: 10px;
+  }
+    div.search p a {
+      color: yellow;
+    }
+
+    div.search div.search-bar {
+      background-color: #525354;
+      height: 70px;
+      width: 330px;
+      margin: 3px auto;
+      border-radius: 15px;
+    }
+    
+    div.search-bar input {
+      -webkit-appearance: none;
+      height: 40px;
+      width: 200px;
+      margin: 14px auto;
+      vertical-align: top;
+      text-align: center;
+    }
+
+    div.search-bar button.btn {
+      background: #185fa5;
+      width: 50px;
+      height: 40px;
+      font-size: 18px;
+      margin-top: 14px;
+      border-radius: 8px;
+      border: 1px solid white;
+      color: white;
+    }
+
+  nav {
+    margin: 0 auto;
+    width: 1100px;
+    height: 60px;
+    text-align: center;
+    background-color: #499ac9;
+    border-radius: 10px;
+  }
+
+  nav a {
+    color: white;
+    margin: 12px 25px;
+    display: inline-block;
+    font-size: 30px;
+    text-decoration: none;
+  }
+
+  aside {
+    width: 180px;
+    margin-left: 120px;
+    margin-top: 40px;
+    text-align: center;
+    display: inline-block;
+  }
+
+  aside a {
+    color: white;
+    display: block;
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  
+  aside a span {
+    color: yellow;
+  }
+
+  article {
+    margin-top: 40px;
+    margin-left: 50px;
+    vertical-align: top;
+    text-align: center;
+    width: 850px;
+    display: inline-block;
+    color: white;
+    height: 300px;
+  }
+
+  article h3 {
+    margin-top: 15px;
+    color: yellow;
+    font-style: italic;
+    font-size: 20px;
+  }
+
+  article h4 {
+    margin-top: 15px;
+  }
+
+  section {
+    background-color: white;
+    height: 300px;
+    border-top: 5px solid black;
+    text-align: center;
+  }
+
+  section div.bottom-left {
+    width: 500px;
+    display: inline-block;
+    margin: 20px;
+    vertical-align: top;
+  }
+
+  section div.bottom-right {
+    width: 500px;
+    display: inline-block; 
+    margin: 20px;
+  }
+  section hr {
+    border: 2px solid #499ac9;
+  }
+
+  section h4 {
+    margin: 10px;
+  }
+  
+  section ul {
+    margin-left: 123px;
+  }
+
+  section li {
+    margin-top: 5px;
+    width: 280px;
+  }
+
+  section a {
+    text-decoration: none;
+    color: #499ac9;
+    font-size: 18px;
+  }
+
+  footer div {
+    width: 900px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  footer div p {
+    opacity: 0.8;
+    color: white;
+    margin: 30px;
+    display: inline-block;
+    font-size: 18px;
+  }
+
+  footer p {
+    text-align: center;
+    color: white;
+    opacity: 0.8;
+  }

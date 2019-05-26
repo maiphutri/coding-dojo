@@ -1,0 +1,180 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+div.container {
+  width: 1200px;
+  margin: 10px auto;
+  color: white;
+  height: 1460px;
+  font-size: 18px;
+  background-color: #1A1A1A;
+  font-family: Lato;
+}
+
+  header img {
+    display: inline-block;
+    margin-right: 610px;
+    height: 100px;
+    background: transparent;
+    margin-left: 30px;
+  }
+
+  header h3 {
+    display: inline-block;
+    height: 20px;
+    margin-top: 30px;
+    vertical-align: top;
+    opacity: 0.9;
+  }
+
+  nav {
+    background: linear-gradient(to top, #2a2b2b, #4E4E4D);
+    height: 50px;
+  }
+
+  nav ul {
+    padding-top: 11px;
+    margin-left: 30px;
+  }
+
+  nav li {
+    display: inline;
+    list-style-type: none;
+    font-size: 20px;
+    opacity: 0.9;
+    padding: 5px;
+    border-right: 2px solid #5a5b5b;
+    padding-right: 15px;
+    margin-right: 5px;
+  }
+
+  nav li:last-child {
+    border: none;
+  }
+
+  
+  div.main-pic img {
+    width: 100%;
+    display: block;
+    background: transparent;
+  }
+
+  section.features {
+    background-color: #1B1B1B;
+    display: block;
+    height: 200px;
+  }
+    
+    section.features div.card {
+      display: inline-block;
+      vertical-align: top;
+      margin: 40px 8px;
+    }
+
+    section.features div.card img {
+      width: 50px;
+      height: 40px;
+      display: inline-block;
+      vertical-align: top;
+    }
+
+    section.features div.card div.info {
+      display: inline-block;
+      width: 225px;
+      opacity: 0.9;
+    }
+
+      div.info h3 {
+        color: orange;
+        margin-bottom: 10px;
+        font-size: 25px;
+        padding-top: 5px;
+      }
+
+  section.text-box {
+    height: 200px;
+    display: block;
+    background-image: repeating-linear-gradient(135deg, transparent, transparent 5px, rgba(10, 6, 6, 0.5) 10px, rgba(5, 4, 4, 0.5) 3px);
+  }
+
+  section.text-box div {
+    display: inline-block;
+    width: 700px;
+    margin-left: 60px;
+    opacity: 0.9;
+    margin-top: 45px;
+  }
+
+  section.text-box h1 {
+    margin-bottom: 10px;
+    font-size: 30px;
+  }
+
+  section.text-box button {
+    height: 50px;
+    width: 150px;
+    display: inline-block;
+    background: linear-gradient(to left top, #fc4a1a, #f7b733);
+    color: white;
+    font-size: 22px;
+    vertical-align: top;
+    margin-top: 75px;
+    margin-left: 240px;
+    border-radius: 5px;
+  }
+
+  div.portfolio-header {
+    display: block;
+    margin-bottom: 10px;
+  }
+
+    div.portfolio-header h3, a {
+      display: inline-block;
+      margin-top: 40px;
+      margin-left: 22px;
+      vertical-align: top;
+    }
+
+    div.portfolio-header h3 {
+      font-size: 25px;
+    }
+
+    div.portfolio-header a {
+      color: orange;
+      margin-left: 915px;
+      text-decoration: none;
+      font-style: italic;
+      font-size: 16px;
+    }
+
+  footer {
+    display: block;
+    background-color: #363838;
+    height: 480px;
+  }
+
+  footer div.card {
+    display: inline-block;
+    width: 263px;
+    vertical-align: top;
+    margin: 8px;
+    margin-left: 21px;
+    opacity: 0.9;
+  }
+
+  footer div.card img {
+    width: 100%;
+    height: 180px;
+    border: 5px solid #5a5b5b;
+  }
+
+  footer div.card h3 {
+    color: orange;
+    margin-top: 10px;
+  }
+
+  footer div.card p {
+    margin-top: 10px;
+  }

@@ -1,0 +1,129 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+div.container {
+  min-height: 1100px;
+  margin: 20px;
+  background: radial-gradient(#ad617e, #301a22)
+}
+  div.container header {
+    background-color: #efefef;
+  }
+
+  header h1 {
+    padding: 20px;
+    display: inline-block;
+    width: 700px;
+    font-size: 50px;
+  }
+
+  header h2 {
+    font-size: 27px;
+    display: inline-block;
+  }
+  
+  section.top div.hero {
+    margin: 15px;
+    display: inline-block;
+  }
+
+  section.top img{
+    width: 500px;
+    height: 300px;
+    border: 5px solid gray;
+  }
+
+  section.top div.details {
+    width: 663px;
+    height: 314px;
+    display: inline-block;
+    vertical-align: top;
+    margin: 15px;
+    font-size: 20px;
+    background: linear-gradient(to right bottom, #eee, #f4dede);
+  }
+    div.details p {
+      margin: 10px;
+    }
+
+    div.details h3 {
+      padding: 10px;
+      height: 30px;
+      color: white;
+      background: linear-gradient(#b5afb1, #828080, #b5afb1)
+    }
+
+    div.details a {
+      margin: 10px;
+      color: black;
+    }
+
+  section.bottom div.card {
+    width: 380px;
+    height: 610px;
+    display: inline-block;
+    margin: 15px;;
+    vertical-align: top;
+    background: linear-gradient(to right bottom, #eee, #f4dede);
+  }
+    div.card img {
+      width: 380px;
+      height: 200px;
+    }
+
+    div.card img.logo {
+      margin: 12px;
+      margin-left: 19.5px;
+      width: 40px;
+      height: 40px;
+    }
+
+    div.card a {
+      margin: 10px 130px;
+      padding: 5px;
+      display: inline-block;
+      width: 130px;
+      text-align: center;
+      background-color: green;
+      color: white;
+      border-radius: 10px;
+      text-decoration: none;
+    }
+
+    div.card h3 {
+      padding: 10px;
+      height: 20px;
+      color: white;
+      background: linear-gradient(#b5afb1, #828080, #b5afb1)
+    }
+    div.card p {
+      padding: 12px;
+      height: 100px;
+    }
+
+  div.container footer {
+    height: 70px;
+    background-color: #efefef;
+    font-size: 20px;
+  }
+    footer p {
+      text-align: center;
+    }
+
+    footer img {
+      width: 20px;
+      height: 20px;
+    }
+    
+    footer div.center {
+      text-align: center;
+      margin-top: 15px;
+    }
+
+    footer div.center a {
+      font-style: italic;
+      vertical-align: top;
+      color: black;
+    }

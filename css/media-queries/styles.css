@@ -1,0 +1,24 @@
+.navbtn {
+  width: 200px;
+  height: 150px;
+}
+
+@media screen and (max-width: 500px) {
+  .navbtn { 
+    width: 100%;
+    background-color: yellow;
+  }
+}
+@media screen and (max-width: 1023px) {
+  .navbtn { 
+    width: 50%;
+    background-color: blue;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .navbtn { 
+    width: 25%;
+    background-color: red;
+  }
+}

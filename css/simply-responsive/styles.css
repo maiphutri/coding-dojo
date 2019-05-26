@@ -1,0 +1,47 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  background-color: azure;
+}
+
+.main {
+  background-color: grey;
+}
+
+p {
+  background-color: yellow;
+  width: 100%
+}
+
+@media only screen and (max-width: 500px) {
+  .sm-0 {
+    display: none;
+  }
+
+  .sm-1 {
+    display: block;
+  }
+}
+
+@media only screen and (min-width: 501px) {
+  .md-0 {
+    display: none;
+  }
+
+  .md-1 {
+    display: block;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .lg-0 {
+    display: none;
+  }
+
+  .lg-1 {
+    display: block;
+  }
+}
