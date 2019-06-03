@@ -1,0 +1,40 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+div.container {
+  text-align: center;
+}
+
+div.row {
+  border-bottom: 5px solid black;
+  padding-bottom: 10px;
+}
+
+  div.row button {
+    width: 80px;
+    height: 40px;
+    display: inline-block;
+    background-color: blue;
+    color: white;
+    font-size: 14px;
+    margin-right: 20px;
+  }
+
+  div.row p {
+    display: inline-block;
+  }
+
+  div.row img {
+    display: inline-block;
+    vertical-align: bottom;
+  }
+
+  div.row img.show {
+    display: none;
+  }
+
+.red {
+  color: red;
+}

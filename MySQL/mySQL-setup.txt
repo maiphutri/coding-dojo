@@ -1,0 +1,12 @@
+// READ
+SELECT * from users;
+
+// CREATE
+INSERT INTO users (first_name, last_name, handle, birthday)
+VALUES ("tri", "mai", "maiphutri", "1990-05-25");
+
+// UPDATE
+UPDATE users SET first_name = "tii" WHERE id = 6;
+
+// DELETE
+DELETE FROM users WHERE id = 6;
