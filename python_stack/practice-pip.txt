@@ -1,0 +1,11 @@
+pip install Django==1.11.9 // Install package Django in python version 2.7
+pip list // List all project's dependencies in python version 2.7
+deactivate // This will deactivate your virtual environment
+pip3 list // List all project's dependencies in python version 3
+source myEnvironments/py3Env/bin/activate // Activate virtual environment for Python version 3
+pip install Django==1.11.9 // Output: Requirement already satisfied
+pip freeze // This command outputs all the currently installed python packages and their versions.
+pip freeze > requirements.txt // I see a file name requirements.txt and there is nothing in that file
+pip uninstall Django // Uninstall package Django
+pip show Django // Show nothing because Django package has been removed
+pip search Flask // This search will generate a list of packages with the term "Flask" in either the name or the description of the package.

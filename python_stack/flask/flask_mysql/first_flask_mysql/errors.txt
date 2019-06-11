@@ -1,0 +1,4 @@
+Remove password => "Access denied for user 'root'@'localhost' (using password: NO)"
+Remove user => "Access denied for user 'mr.t'@'localhost' (using password: YES)"
+Remove self.connection = connection => 'MySQLConnection' object has no attribute 'connection'
+Remove return result => return None

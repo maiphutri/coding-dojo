@@ -1,0 +1,41 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h1 {
+  margin-bottom: 20px;
+}
+
+div.container {
+  text-align: center
+}
+
+div.row {
+  font-size:0
+}
+
+div.square {
+  width: 50px;
+  height: 50px;
+  display: inline-block;
+  line-height: 0
+}
+
+div.container div.even:nth-child(odd) {
+  background-color: black;
+}
+
+div.container div.odd:nth-child(odd) {
+  background-color: burlywood;
+}
+
+div.container div.even:nth-child(even) {
+  background-color: burlywood;
+}
+
+div.container div.odd:nth-child(even) {
+  background-color:black;
+}
+

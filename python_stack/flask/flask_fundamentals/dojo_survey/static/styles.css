@@ -1,0 +1,15 @@
+* {
+  margin:0;
+  padding:0;
+}
+
+div.container {
+  margin: 20px;
+}
+
+div.container div {
+  display: block;
+}
+div.container div textarea {
+  display: block;
+}

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="{{url_for('static', filename='styles.css')}}">
+  <title>Dojo Survey</title>
+</head>
+<body>
+  <div class="container">
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        {% for message in messages %}
+          <p>{{ message }}</p>
+        {% endfor %}
+      {% endif %}
+    {% endwith %}
+    <form action="/create" method="post">
+      <div>
+        <label for="name">Your Name:</label>
+        <input type="text" name="name" id="name">
+      </div>
+      <div>
+        <input type="radio" name="gender" value="Male" checked>
+        <label for="gender">Male</label>
+        <input type="radio" name="gender" value="Female">
+        <label for="gender">Female</label>
+      </div>
+      <div>
+        <label for="location">Dojo Location:</label>
+        <select name="location" id="location">
+          <option value="None">Select</option>
+          <option value="San Jose">San Jose</option>
+          <option value="LA">LA</option>
+          <option value="OC">OC</option>
+          <option value="Seattle">Seattle</option>
+        </select>
+      </div>
+      <div>
+        <label for="language">Favorite Language:</label>
+        <select name="language" id="language">
+          <option value="None">Select</option>
+          <option value="Python">Python</option>
+          <option value="Javascript">Javascript</option>
+          <option value="Java">Java</option>
+          <option value="C++">C++</option>
+        </select>
+      </div>
+      <div>
+        <p>Comment (optional):</p>
+        <textarea name="comment" id="comment" cols="50" rows="4"></textarea>
+        <input type="submit" value="Submit" class="btn btn-primary mt-2">
+      </div>
+    </form>
+  </div>
+  
+</body>
+</html>
