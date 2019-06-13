@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="/static/styles.css">
+  <title>Wall</title>
+</head>
+<body>
+  <div class="container">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="/">Coding Dojo Wall</a>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link text-light">Welcome, {{session['user']['first_name']}}</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-light" href="/logout">Log out</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <main class="msg-wall">
+      {% with login = get_flashed_messages(category_filter=["login"]) %}
+          {% if login %}
+            <div class="alert alert-success" id="login-alert" role="alert">
+              {%- for msg in login %}
+                {{ msg }}
+              {% endfor -%}
+            </div>
+          {% endif %}
+        {% endwith %}
+      <section class="msg-list">
+        {% if messages %}
+          <h3>{{count}} Message {{s if count > 1}} for you</h3>
+          {% for msg in messages: %}
+            <p>{{msg['first_name']}} ({{current_time.hour -  msg['created_at'].hour}} hour ago):</p>
+            <p id='msg'>"{{msg['message']}}"</p>
+          {% endfor %}
+        {% endif %}
+      </section>
+      <section class="send-msg">
+        <h3>Send Messages</h3>
+        {% for e in recievers: %}
+          {% if e['id'] != session['user']['id'] %}
+            <form class="msg-box" action="/send/{{ e['id'] }}" method='post'>
+              <h5>{{ e['first_name'] }}</h5>
+              <textarea name="message" cols="32" rows="2"></textarea>
+              <button type="submit" class="btn btn-primary">Send</button>
+            </form>
+          {% endif %}
+        {% endfor %}
+      </section>
+    </main>
+  </div>
+</body>
+</html>
