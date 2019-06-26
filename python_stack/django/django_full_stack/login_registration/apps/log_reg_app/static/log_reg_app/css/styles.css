@@ -1,0 +1,60 @@
+form.registration {
+  width: 35%;
+  display: inline-block;
+}
+
+form.login {
+  margin-left: 25%;
+  width: 35%;
+  display: inline-block;
+  vertical-align: top;
+}
+
+main.msg-wall {
+  margin-top: 60px;
+  width: 1200px;
+}
+  section {
+    margin-top: 2%;
+  }
+
+  section.msg-list {
+    display: inline-block;
+    width: 45%;
+    vertical-align: top;
+    height: 600px;
+  }
+
+  section.send-msg {
+    display: inline-block;
+    width: 45%;
+    border-left: 3px solid black;
+    height: 600px;
+    padding-left: 5%;
+  }
+
+  form.msg-box:not(:last-child) {
+    margin-bottom: 15px;
+  }
+
+  form.msg-box h5 {
+    display: inline-block;
+    vertical-align: top;
+    width: 100px;
+    padding-top: 15px;
+  }
+
+  form.msg-box textarea {
+    border-radius: 3px;
+  }
+
+  form.msg-box button {
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 10px;
+    margin-top: 8px;
+  }
+
+  p#msg {
+    margin-left: 40px;
+  }

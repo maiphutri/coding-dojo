@@ -1,0 +1,61 @@
+{% include 'dojo_reads_app/static/partials/header.html'%}
+{% include 'dojo_reads_app/static/partials/navbar.html'%}
+ <div class="container">
+  <h1>{{book.title}}</h1>
+  {% for i in avg_rating|rjust:avg_rating %}
+    <span class="fa fa-star checked"></span>
+  {% endfor %}
+  <p class="mb-0">Author: {{book.author.name}}</p>
+  {% if messages %}
+  <ul class="messages alert alert-danger">
+    {% for message in messages %}
+      <li {% if message.error %} class="{{ message.error }}" {% endif %}>{{ message }}</li>
+    {% endfor %}
+  </ul>
+  {% endif %}
+  <section class="book-review">
+    <h4 class="mb-3">Reviews: </h4>
+    {% for r in reviews %}
+    <div class="container review-box">
+      <p class="mt-2">Rating: 
+        {% for i in r.rating|rjust:r.rating %}
+          <span class="fa fa-star checked"></span>
+        {% endfor %}
+      </p>
+      <p>
+        <a href="/users/{{r.user.id}}">{{r.user.first_name}}</a> says: {{r.content}}
+      </p>
+      <p class="date-post">Posted on {{r.created_at|date}}</p>
+      {% if r.user.id == request.session.user %}
+      <form action="/books/{{ book.id }}/reviews/{{ r.id }}/destroy" method="post" class='btn-delete'>
+        {% csrf_token %}
+        <button type='submit' class='btn btn-danger btn-sm'>Delete</button>
+      </form>
+      {% endif %}
+    </div>
+    {% endfor %}
+  </section>
+  <aside class="add-review">
+    {% if not isReviewed %}
+    <form action="/books/{{book.id}}/add_review" method="post">
+      {% csrf_token %}
+      <h4>Add a Review:</h4>
+      <small class="text-muted">Review must be at least 10 characters</small>
+      <textarea name="review" cols="50" rows="6"></textarea>
+      <p>Rating:  
+        <select class="custom-select" id="star-review" name='rating'>
+          <option value="null">Select</option>
+          <option value="5">5</option>
+          <option value="4">4</option>
+          <option value="3">3</option>
+          <option value="2">2</option>
+          <option value="1">1</option>
+        </select>
+        stars
+      </p>
+      <button type='submit' class="btn btn-success">Submit Review</button>
+    </form>
+    {% endif %}
+  </aside>
+ </div>
+{% include 'dojo_reads_app/static/partials/footer.html'%}

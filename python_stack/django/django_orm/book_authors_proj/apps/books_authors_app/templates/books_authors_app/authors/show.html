@@ -1,0 +1,27 @@
+{% include 'books_authors_app/static/partials/header.html' %}
+  <div class="container">
+    <h1>{{author.first_name}} {{author.last_name}}</h1>
+    <p>ID: {{author.id}}</p>
+    <div class="description">
+      <p class="desc">Notes:</p>
+      <textarea class="desc" rows="8" readonly>{{ author.note }}</textarea>
+    </div>
+    <p>Books:</p>
+    <ul>
+      {% for b in books %}
+        <li>{{ b.title }}</li>
+      {% endfor %}
+    </ul>
+    <form action="/authors/{{ author.id }}/assign_book" method="post">
+      {% csrf_token %}
+      <div class="form-group w-25">
+          <select class="form-control" name="book">
+            {% for b in not_books %}
+              <option value="{{b.id}}">{{b.title}}</option>
+            {% endfor %}
+          </select>
+          <button type='submit' class='btn btn-success mt-3 float-right'>Add</button>
+        </div>
+    </form>
+  </div>
+{% include 'books_authors_app/static/partials/footer.html' %}

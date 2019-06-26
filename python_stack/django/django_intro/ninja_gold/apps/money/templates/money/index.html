@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  {% load static %}
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="{% static 'money/css/styles.css' %}">
+  <title>Ninja Gold</title>
+</head>
+<body>
+  <div class="container">
+    <div class='header'>
+      <h4>Your Gold: {{ request.session.total_gold }}</h4>
+      <form action="/reset" method="POST" class='reset-btn'>
+        {% csrf_token %}
+        <input type='submit' class="btn btn-danger btn-sm" value="Reset">
+      </form>
+    </div>
+    <div class="card-group">
+      <div class="card">
+        <img class="card-img-top" src="{% static 'money/images/farm.jpg' %}" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">Farm</h5>
+          <p class="card-text">Earns 10-20 golds</p>
+          <a href="/farm" class="btn btn-primary btn-sm {{request.session.gameover|yesno:'disabled,'}}">Find Gold</a>
+        </div>
+      </div>
+      <div class="card">
+        <img class="card-img-top" src="{% static 'money/images/cave.jpg' %}" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">Cave</h5>
+          <p class="card-text">Earns 5-10 golds</p>
+          <a href="/cave" class="btn btn-primary btn-sm {{request.session.gameover|yesno:'disabled,'}}">Find Gold</a>
+        </div>
+      </div>
+      <div class="card">
+        <img class="card-img-top" src="{% static 'money/images/house.jpg' %}" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">House</h5>
+          <p class="card-text">Earns 2-5 golds</p>
+          <a href="/house" class="btn btn-primary btn-sm {{request.session.gameover|yesno:'disabled,'}}">Find Gold</a>
+        </div>
+      </div>
+      <div class="card">
+        <img class="card-img-top" src="{% static 'money/images/casino.jpg' %}" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">Casino</h5>
+          <p class="card-text">Earns/takes 0-50 golds</p>
+          <a href="/casino" class="btn btn-primary btn-sm {{request.session.gameover|yesno:'disabled,'}}">Gamble</a>
+        </div>
+      </div>
+    </div>
+    <div class="mt-2 text-center">
+      <h5 class="text-primary">Target: Get 300 golds in 15 attempts</h5>
+    </div>
+    <h5 id="activities">Activities: (attempts: {{request.session.attempts}})</h5>
+    <div class="activities">
+      <ul>
+        {% for msg in request.session.activities %}
+          <li class='{{ msg.isLost|yesno:"lost,earned" }}'>
+              {{ msg.msg }}
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script>
+  function updateScroll(){
+    var element = document.querySelector(".activities");
+    element.scrollTop = element.scrollHeight;
+  }
+  updateScroll()
+</script>
+</body>
+</html>

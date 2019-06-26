@@ -1,0 +1,31 @@
+.container {
+  width: 90%;
+}
+
+p.desc {
+  display: inline-block;
+  vertical-align: top;
+  width: 10%;
+}
+
+textarea.desc {
+  border: none;
+  display: inline-block;
+  overflow-y: scroll;
+  outline: none;
+  resize: none;
+  width: 70%;
+}
+
+.author-textarea, .book-textarea {
+  display: block;
+  margin-bottom: 2%;
+}
+ 
+#title {
+  width: 72%;
+}
+
+#fn, #ln {
+  width: 80%;
+}

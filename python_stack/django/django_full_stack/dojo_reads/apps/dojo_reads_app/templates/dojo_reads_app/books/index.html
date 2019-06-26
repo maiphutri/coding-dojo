@@ -1,0 +1,33 @@
+{% include 'dojo_reads_app/static/partials/header.html'%}
+{% include 'dojo_reads_app/static/partials/navbar.html'%}
+  <div class="container">
+    <h1>Welcome {{ user.first_name }}</h1>
+    <section class="recent-book">
+      <h4>Recent Book Reviews:</h4>
+      {% for b in recent_reviews %}
+      <div class="container">
+        <a href="/books/{{b.book.id}}">{{b.book.title}}</a>
+        <div class="container">
+          <p class="mt-2">Rating: 
+            {% for i in b.rating|rjust:b.rating %}
+              <span class="fa fa-star checked"></span>
+            {% endfor %}
+          </p>
+          <p>
+            <a href="/users/{{b.user.id}}">{{b.user.first_name}}</a> says: {{b.content}}
+          </p>
+          <p class="date-post">Posted on {{b.created_at|date}}</p>
+        </div>
+      </div>
+      {% endfor %}
+    </section>
+    <section class="book-list">
+      <h4>Other Books with Reviews:</h4>
+      <div class='book-list-box'>
+          {% for b in books %}
+            <li style="list-style-type: none" class="ml-3"><a href="/books/{{b.id}}">{{b.title}}</a></li>
+          {% endfor %}
+      </div>
+    </section>
+  </div>
+{% include 'dojo_reads_app/static/partials/footer.html'%}

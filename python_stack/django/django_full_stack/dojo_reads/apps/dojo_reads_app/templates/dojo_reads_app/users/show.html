@@ -1,0 +1,14 @@
+{% include 'dojo_reads_app/static/partials/header.html'%}
+{% include 'dojo_reads_app/static/partials/navbar.html'%}
+  <div class="container">
+    <h1>User: {{ user.first_name }} {{ user.last_name }}</h1>
+    <p>Email: {{ user.email }}</p>
+    <p>Total Reviews: {{ total_reviews }}</p>
+    <h4>Posted reviews on the following books:</h4>
+    <ul>
+      {% for r in reviews %}
+        <li><a href="/books/{{r.book.id}}">{{ r.book.title }}</a></li>
+      {% endfor %}
+    </ul>
+  </div>
+{% include 'dojo_reads_app/static/partials/footer.html'%}

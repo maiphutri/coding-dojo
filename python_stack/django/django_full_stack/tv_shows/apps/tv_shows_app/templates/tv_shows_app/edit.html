@@ -1,0 +1,53 @@
+{% include 'dojo_reads_app/static/partials/header.html' %}
+  <div class="container">
+    <header class="mt-3">
+      <a href="/shows" class="btn btn-primary float-right" >Go Back</a>
+    </header>
+    <main class="w-50">
+      <h1>Edit {{show.title}}</h1>
+      {% if messages %}
+        <ul class="messages">
+          {% for message in messages %}
+            <li {% if message.tags %} class="{{ message.tags}} text-danger" {% endif %}>
+              {{ message }}
+            </li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+      <form action="/shows/{{show.id}}/update" method='post'>
+        {% csrf_token %}
+        <div class="form-group">
+          <label>Title</label>
+          {% if request.session.user_errors %}
+            <input type="text" class="form-control" name="title" value="{{request.session.user_errors.title}}">
+          {% else %}
+            <input type="text" class="form-control" name="title" value="{{show.title}}">
+          {% endif %}
+        </div>
+        <div class="form-group">
+          <label>Network</label>
+          {% if request.session.user_errors %}
+            <input type="text" class="form-control" name="network" value="{{request.session.user_errors.network}}">
+          {% else %}
+            <input type="text" class="form-control" name="network" value="{{show.network}}">
+          {% endif %}
+        </div>
+        <div class="form-group">
+          <label>Release Date</label>
+          <input type="date" class="form-control" name='release_date' value="{{show.release_date|date:'Y-m-d'}}">
+        </div>
+        <div class="form-group">
+          <label>Description</label>
+          {% if request.session.user_errors %}
+          <textarea name="desc" class='form-control' cols="50" rows="5">{{request.session.user_errors.desc}}</textarea>
+          {% else %}
+            <textarea name="desc" class='form-control' cols="50" rows="5">{{show.description}}</textarea>
+          {% endif %}
+        </div>
+        <div class="text-center">
+          <button class="btn btn-success" type="submit">Update</button>
+        </div>
+      </form>
+    </main>    
+  </div>
+{% include 'dojo_reads_app/static/partials/footer.html' %}

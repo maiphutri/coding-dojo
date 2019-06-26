@@ -1,0 +1,62 @@
+{% include 'dojo_reads_app/static/partials/header.html'%}
+{% include 'dojo_reads_app/static/partials/navbar.html'%}
+  <div class="container">
+    <h1>Add a new book title and a review:</h1>
+    {% if messages %}
+      <ul class="messages alert alert-danger">
+        {% for message in messages %}
+          <li {% if message.error %} class="{{ message.error }}" {% endif %}>{{ message }}</li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+    <form action="/books/create" method='post' class="w-75">
+      {% csrf_token %}
+      <div class="form-group">
+        <label>Book Title:</label>
+        <input type="text" class="form-control" name="title">
+      </div>
+      <div class="form-group">
+        <label>Author:</label>
+        <ul class='book-add-author'>
+          <li>
+            <div class="input-group mb-3">
+              <select class="custom-select" id='author-select' name='author-select'>
+                <option value='null'>Choose from the list</option>
+                {% for author in authors %}
+                  <option value="{{author.id}}">{{author.name}}</option>
+                {% endfor %}
+              </select>
+            </div>
+          </li>
+          <li>
+            <div class="form-group">
+              <label>Or add a new author:</label>
+              <input type="text" class="form-control" name="add-author" id="add-author">
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="form-group">
+        <label>Review:</label>
+        <ul class="book-add-author">
+          <li>
+            <small class="text-muted">Review must be at least 10 characters</small>
+            <textarea name="review"  cols="96" rows="5"></textarea>
+          </li>
+        </ul>
+      </div>
+      <p>Rating:  
+        <select class="custom-select" id=star-add name='rating'>
+          <option value="null">Select</option>
+          <option value="5">5</option>
+          <option value="4">4</option>
+          <option value="3">3</option>
+          <option value="2">2</option>
+          <option value="1">1</option>
+        </select>
+        stars
+      </p>
+      <button type='submit' class="btn btn-success">Add Book and Review</button>
+    </form>
+  </div>
+{% include 'dojo_reads_app/static/partials/footer.html'%}

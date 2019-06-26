@@ -1,0 +1,55 @@
+Book.objects.create(title="C Sharp", desc="Obsolete")                                                                
+Book.objects.create(title="Java", desc="Good")                                                                       
+Book.objects.create(title="Python", desc="Not Bad")                                                                  
+Book.objects.create(title="PHP", desc=“Hmmm”)                                                                         
+Book.objects.create(title="Ruby", desc="Hmmm")                                                                       
+
+Author.objects.create(first_name="Jane", last_name="Austen")                                                         
+Author.objects.create(first_name="Emily", last_name="Dickinson")                                                     
+Author.objects.create(first_name="Fyodor", last_name="Dostoevksy")                                                   
+Author.objects.create(first_name="William", last_name="Shakespeare")                                                
+Author.objects.create(first_name="Lau", last_name="Tzu")                                                            
+
+x = Book.objects.get(title="C Sharp")
+x.title = "C#"
+x.save()
+
+x = Author.objects.get(id=4)
+x.first_name = "Bill"
+x.save()
+
+b1 = Book.objects.first()
+b2 = Book.objects.get(id=2)
+a1 = Author.objects.first()
+a1.books.add(b1)
+a1.books.add(b2)
+
+a2 = Author.objects.get(id=2)
+b3 = Book.objects.get(id=3)
+a2.books.add(b1) 
+a2.books.add(b2)      
+a2.books.add(b3)      
+
+b4 = Book.objects.get(id=4)
+a3 = Author.objects.get(id=3)
+a3.books.add(b1)
+a3.books.add(b2)
+a3.books.add(b3)
+a3.books.add(b4)
+
+a4 = Author.objects.get(id=4)
+for b in Book.objects.all():
+	a4.books.add(b)
+
+Book.objects.get(id=3).authors.values()
+
+ra = Book.objects.get(id=3).authors.first()
+Book.objects.get(id=3).authors.remove(ra)
+
+a5 = Author.objects.get(id=5)
+Book.objects.get(id=3).authors.add(a5)
+
+Author.objects.get(id=3).books.values()
+
+Book.objects.get(id=5).authors.values()
+	

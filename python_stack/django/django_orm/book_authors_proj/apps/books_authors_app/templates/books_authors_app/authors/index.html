@@ -1,0 +1,57 @@
+{% include 'books_authors_app/static/partials/header.html' %}
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-6">
+        <h1>Add a Book</h1>
+        <form class="col-sm-12" action="/add_author" method='post'>
+          {% csrf_token %}
+          <div class="row">
+            <div class="col-sm-3">
+              <label for="title">First Name:</label>
+            </div>
+            <div class="col-sm-9">
+              <input type="text" id="fn" name='fn'>
+            </div>
+          </div>
+          <div class="row mt-2">
+            <div class="col-sm-3">
+              <label for="title">Last Name:</label>
+            </div>
+            <div class="col-sm-9">
+              <input type="text" id="ln" name='ln'>
+            </div>
+          </div>
+          <div class="row mt-3">
+            <div class="col-sm-3">
+              <label for="note">Notes:</label>
+            </div>
+            <div class="col-sm-9">
+              <textarea id="textarea1" name='note' class="author-textarea" rows="5" cols="35"></textarea>
+              <button class="btn btn-primary" id="btn-add" type="submit">Add</button>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="col-sm-6">
+        <table class="table table-striped">
+          <thead>
+            <tr class="table-success">
+              <th>ID</th>
+              <th>Name</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for a in authors %}
+              <tr>
+                <td>{{ a.id }}</td>
+                <td>{{ a.first_name }} {{ a.last_name}}</td>
+                <td><a href="/authors/{{ a.id }}">View</a></td>
+              </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+{% include 'books_authors_app/static/partials/footer.html' %}
