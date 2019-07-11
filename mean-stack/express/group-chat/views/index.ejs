@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="/css/style.css">
+  <title>Group Chat</title>
+</head>
+<body>
+  <div class="container">
+    <h1>Conversation Board</h1>
+    <div class="message-board text-left">
+
+    </div>
+    <form id="form" class="form-group">
+      <input type="text" placeholder="Enter your message here" name="message" class="form-control">
+      <button type='submit' class='btn btn-primary mt-2 float-right'>Send</button>
+    </form>
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js"></script>
+  <script src="/socket.io/socket.io.js"></script>
+  <script>
+    
+    var socket = io();
+    
+    socket.emit("isNewUser", {userId: "<%= userId %>"});
+
+    socket.on("isNewUser", data => {
+      if (data.newUser) {
+        const username = window.prompt("Your name:");
+        socket.emit("addNewUser", {name: username, userId: "<%= userId %>"});
+      } 
+    })
+
+    socket.on("allMessages", data => {
+      for (let [key,val] of data.messages.entries()) {
+        console.log(val.userId)
+        $(".message-board").append(`
+          <p><strong><em>${val.name}</em></strong>: ${val.msg}</p>
+        `)
+      }
+    })
+
+    socket.on("messages", data => {
+      console.log(data.userId);
+      $(".message-board").append(`
+        <p><strong><em>${data.name}</em></strong>: ${data.msg}</p>
+      `)
+    })
+
+    $("#form").submit(function(event) { 
+      event.preventDefault();
+      var data = $(this).serializeArray();
+      socket.emit("newMessage", {msg: data[0].value, userId: "<%= userId %>"});
+    })
+
+  </script>
+</body>
+</html>

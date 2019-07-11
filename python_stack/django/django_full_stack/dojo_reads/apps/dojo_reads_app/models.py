@@ -78,7 +78,7 @@ class Author(models.Model):
 
 class Book(models.Model):
   title = models.CharField(max_length=60)
-  author = models.ForeignKey(Author, related_name="books")
+  author = models.ForeignKey(Author, on_delete=models.CASCADE, related_name="books")
   created_at = models.DateTimeField(auto_now_add=True)
   updated_at = models.DateTimeField(auto_now=True)
   objects = BookManager()
@@ -86,8 +86,8 @@ class Book(models.Model):
 class Review(models.Model):
   content = models.TextField()
   rating =  models.CharField(max_length=1, null=True)
-  user = models.ForeignKey(User, related_name="reviews")
-  book = models.ForeignKey(Book, related_name="reviews")
+  user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="reviews")
+  book = models.ForeignKey(Book, on_delete=models.CASCADE, related_name="reviews")
   created_at = models.DateTimeField(auto_now_add=True)
   updated_at = models.DateTimeField(auto_now=True)
   objects = ReviewManager()
