@@ -1,0 +1,25 @@
+<% include ../static/partials/header.ejs %>
+<% include ../static/partials/navbar.ejs %>
+  <div class="container">
+    <h1>Create a new mongoose</h1>
+    <form action="/mongooses/<%= mon.id %>" method="post" class="w-50" ref="uploadForm" id="uploadForm" encType="multipart/form-data">
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" name="name" class="form-control" value="<%= mon.name %>">
+      </div>
+      <div class="form-group">
+        <label for="name">Characteristic</label>
+        <input type="text" name="characteristic" class="form-control" value="<%= mon.characteristic %>">
+      </div>
+      <div class="form-group">
+        <label for="name">Favor Foods</label>
+        <input type="text" name="favFoods" class="form-control" value="<%= mon.favFoods.join(', ') %>">
+      </div>
+      <div class="form-group">
+        <label for="name">Image</label>
+        <input type="file" name="img" class="form-control-file">
+      </div>
+      <button type='submit' class='btn btn-primary'>Update</button>
+    </form>
+  </div>
+<% include ../static/partials/footer.ejs %>

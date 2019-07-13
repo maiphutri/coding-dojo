@@ -1,0 +1,18 @@
+<% include ../static/partials/header.ejs %>
+<% include ../static/partials/navbar.ejs %>
+  <div class="container">
+    <h1>Welcome to Mongoose Dashboard</h1>
+    <% for (let i in mons) { %>
+      <% if (i % 3 == 0) { %>
+        <div class="row">
+      <% } %>
+          <section class="col"> 
+            <a href="/mongooses/<%= mons[i].id %>"><img src="/img/<%= mons[i].img %>" alt="<%= mons[i].name %>"></a>
+            <p><%= mons[i].name %></p>
+          </section>
+      <% if (i % 3 == 2) { %>
+        </div>
+      <% } %>
+    <% } %>
+  </div>
+<% include ../static/partials/footer.ejs %>

@@ -1,0 +1,11 @@
+form.registration {
+  width: 35%;
+  display: inline-block;
+}
+
+form.login {
+  margin-left: 25%;
+  width: 35%;
+  display: inline-block;
+  vertical-align: top;
+}
