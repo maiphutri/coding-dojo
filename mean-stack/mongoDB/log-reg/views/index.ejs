@@ -15,34 +15,73 @@
     <header class="text-center">
       <h1>Login and Registration</h1>
     </header>
-    <% if (messages.registration) { %>
-      <ul>
-        <% messages.registration.forEach(msg => { %>
-          <li><%= msg %></li>
-        <% }) %>
-      </ul>
-    <% } %>
     <form class='registration' action="/registration" method="post">
-      <h2 class="animated bounce">Register</h2>
+      <h2>Register</h2>
       <div class="form-group">
         <label>First name:</label>
-        <input type="text" class="form-control" name="firstName">
+        <% if (messages.firstName) { %>
+            <% messages.firstName.forEach(msg => { %>
+              <p class="alert alert-danger p-0 pl-2" role="alert"><%= msg %></p>
+            <% }) %>
+        <% } %>
+        <input type="text" class="form-control" name="firstName" value="<%= errors.firstName %>">
       </div>
       <div class="form-group">
         <label>Last name:</label>
-        <input type="text" class="form-control" name='lastName'>
+        <% if (messages.lastName) { %>
+          <% messages.lastName.forEach(msg => { %>
+            <p class="alert alert-danger p-0 pl-2" role="alert"><%= msg %></p>
+          <% }) %>
+        <% } %>
+        <input type="text" class="form-control" name='lastName' value="<%= errors.lastName %>">
       </div>
-   
+      <div class="form-group">
+        <label>Email:</label>
+        <% if (messages.email) { %>
+          <% messages.email.forEach(msg => { %>
+            <p class="alert alert-danger p-0 pl-2" role="alert"><%= msg %></p>
+          <% }) %>
+        <% } %>
+        <input type="text" class="form-control" name='email' value="<%= errors.email %>">
+        <div class="form-group">
+          <label>Password</label>
+          <% if (messages.password) { %>
+            <% messages.password.forEach(msg => { %>
+              <p class="alert alert-danger p-0 pl-2" role="alert"><%= msg %></p>
+            <% }) %>
+          <% } %>
+          <input type="password" class="form-control" name='password'>
+        </div>
+        <div class="form-group">
+          <label>Confirm Password</label>
+          <% if (messages.confirmPw) { %>
+            <% messages.confirmPw.forEach(msg => { %>
+              <p class="alert alert-danger p-0 pl-2" role="alert"><%= msg %></p>
+            <% }) %>
+          <% } %>
+          <input type="password" class="form-control" name='confirmPw'>
+        </div>
+      </div>
       <button type="submit" class="btn btn-success">Register</button>
     </form>
     <form class="login" action='/login' method='post'>
       <h2>Login</h2>
       <div class="form-group">
         <label>Email:</label>
-        <input type="text" class="form-control" name='email'>
+        <% if (messages.emailLog) { %>
+          <% messages.emailLog.forEach(msg => { %>
+            <p class="alert alert-danger p-0 pl-2" role="alert"><%= msg %></p>
+          <% }) %>
+        <% } %>
+        <input type="text" class="form-control" name='email' value="<%= errors.emailLog %>">
       </div>
       <div class="form-group">
         <label>Password</label>
+        <% if (messages.pw) { %>
+          <% messages.pw.forEach(msg => { %>
+            <p class="alert alert-danger p-0 pl-2" role="alert"><%= msg %></p>
+          <% }) %>
+        <% } %>
         <input type="password" class="form-control" name='password'>
       </div>
       <button type="submit" class="btn btn-success">Login</button>
