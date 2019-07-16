@@ -8,7 +8,7 @@ module.exports = {
       if(err) {
         res.json({message: "Error", error: err});
       } else {
-        res.json({message: "Success", data: tasks});
+        res.json({message: "Success", tasks: tasks});
       }
     })
   },
@@ -18,7 +18,7 @@ module.exports = {
       if (err) {
         res.json({message: "Error", error: err});
       } else {
-        res.json({message: "Success", data: task});
+        res.json({message: "Success", task: task});
       }
     })
   },
@@ -28,7 +28,7 @@ module.exports = {
       if (err) {
         res.json({message: "Error", error: err});
       } else {
-        res.json({message: "Success", data: task});
+        res.json({message: "Success", task: task});
       }
     })
   },
@@ -38,7 +38,7 @@ module.exports = {
       if (err) {
         res.json({message: "Error", error: err});
       } else {
-        res.json({message: "Success", data: task});
+        res.json({message: "Success", task: task});
       }
     })
   },
