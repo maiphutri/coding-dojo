@@ -1,0 +1,25 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div class="container text-center">
+  <h1>Restful Tasks API</h1>
+  <button class='btn btn-primary' (click)="showAllTasks()">GET ALL TASKS</button>
+  <div class="form-group w-25 mx-auto mt-3">
+    <input type="text" #box (keyup.enter)="onEnter(box.value)"  class="form-control" placeholder="Enter Task Id">
+  </div>
+  <div class="container" *ngIf="showTasks">
+    <ng-container *ngFor="let task of tasks;">
+      <div class="row mt-3">
+        <div class="col-8">
+          {{task.title}}
+        </div>
+        <div class="col-4 text-left">
+          <button class="btn btn-info" (click)="showDesTask(task.title, task.description)">Show</button>
+        </div>
+      </div>
+    </ng-container>
+  </div>
+  <section class="mt-5" *ngIf="taskTitle">
+      <p>Title: {{ taskTitle }}</p>
+      <p>Description: {{ taskDesc }}</p>
+    </section>
+</div>
+<router-outlet></router-outlet>

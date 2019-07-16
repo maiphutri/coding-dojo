@@ -30,6 +30,7 @@ module.exports = {
 
   getTask(id, callback) {
     Task.findById(id).then(task => {
+      console.log(id)
       callback(null, task);
     })
     .catch(err => callback(err));
