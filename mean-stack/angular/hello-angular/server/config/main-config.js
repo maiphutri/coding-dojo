@@ -4,7 +4,7 @@ const session     = require("express-session");
 
 module.exports = {
   init(app, express) {
-    app.use(express.static(path.join(__dirname, "../..", "public/dist/public")));
+    app.use(express.static(path.join(__dirname, "../..", "client/dist/client")));
     app.use(bodyParser.json());
     app.use(session({
       secret: "kitty",

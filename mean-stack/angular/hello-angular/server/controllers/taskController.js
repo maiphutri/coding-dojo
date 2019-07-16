@@ -2,9 +2,6 @@ const Task        = require("../models/Task"),
       taskQueries = require("../models/queries.tasks");
 
 module.exports = {
-  index(req, res) {
-    res.sendFile("index.html");
-  },
 
   tasks(req, res) {
     taskQueries.getAllTasks((err, tasks) => {
