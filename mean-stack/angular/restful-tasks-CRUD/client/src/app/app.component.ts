@@ -7,15 +7,18 @@ import { HttpService } from "./http.service";
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  tasks: String[]= [];
+  tasks: String[] = [];
   showTasks: Boolean = false;
   taskTitle: String = "";
   taskDesc: String = "";
   newTask: any;
+  modalTask:any;
   constructor(private _httpService: HttpService) {};
 
   ngOnInit(): void {
     this.getTasksFromService();
+    this.newTask = {title: "", description: ""};
+    this.modalTask = {title: "", description: ""};
   }
 
   getTasksFromService(): void {
@@ -30,9 +33,10 @@ export class AppComponent implements OnInit {
     this.showTasks = true;
   }
 
-  showDesTask(title:string, desc:string): void {
+  showDesTask(title:string, desc:string, test: any): void {
     this.taskTitle = title;
     this.taskDesc = desc;
+    test.toggle();
   }
 
   onEnter(value: string): void {
@@ -50,5 +54,35 @@ export class AppComponent implements OnInit {
       console.log(data);
     })
     this.newTask = {title: "", description: ""};
+    this.getTasksFromService();
   }
+
+  editModal(modal:any, task): void{
+    this.modalTask = task;
+    modal.show();
+  }
+
+  updateTask(event:any): void {
+    event.preventDefault();
+    const data = {
+      title: event.target.title.value,
+      description: event.target.desc.value,
+      completed: false
+    }
+    let obs = this._httpService.updateTask(this.modalTask._id, data);
+    obs.subscribe(data => {
+      console.log("Updated");
+      
+      this.getTasksFromService();
+    })
+  }
+
+  deleteTask(id:string): void {
+    let obs = this._httpService.delete(id);
+    obs.subscribe(data => {
+      console.log("Deleted");
+      this.getTasksFromService();
+    })
+  }
+
 }

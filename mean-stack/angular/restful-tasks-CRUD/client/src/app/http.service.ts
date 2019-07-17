@@ -15,7 +15,16 @@ export class HttpService {
   getTask(id: string) {
     return this._http.get(`/tasks/${id}`);
   }
+
   createTask(data) {
     return this._http.post("/tasks", data);
+  }
+
+  updateTask(id, data) {
+    return this._http.post(`/tasks/${id}`, data);
+  }
+  
+  delete(id) {
+    return this._http.get(`/tasks/${id}/delete`);
   }
 }
