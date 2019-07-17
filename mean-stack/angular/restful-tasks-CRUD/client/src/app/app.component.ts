@@ -9,10 +9,9 @@ import { HttpService } from "./http.service";
 export class AppComponent implements OnInit {
   tasks: String[] = [];
   showTasks: Boolean = false;
-  taskTitle: String = "";
-  taskDesc: String = "";
   newTask: any;
-  modalTask:any;
+  modalTask: any;
+  selectedTask: any;
   constructor(private _httpService: HttpService) {};
 
   ngOnInit(): void {
@@ -33,19 +32,16 @@ export class AppComponent implements OnInit {
     this.showTasks = true;
   }
 
-  showDesTask(title:string, desc:string, test: any): void {
-    this.taskTitle = title;
-    this.taskDesc = desc;
-    test.toggle();
-  }
-
   onEnter(value: string): void {
     let obs = this._httpService.getTask(value);
     obs.subscribe(data => {
       console.log("Got task that user wants", data);
-      this.taskTitle = data['task'].title;
-      this.taskDesc = data['task'].description;
+      this.selectedTask = data['task'];
     })
+  }
+
+  showTask(task:any): void {
+    this.selectedTask = task;
   }
 
   onSubmit(): void {
@@ -57,7 +53,7 @@ export class AppComponent implements OnInit {
     this.getTasksFromService();
   }
 
-  editModal(modal:any, task): void{
+  editModal(modal:any, task:any): void{
     this.modalTask = task;
     modal.show();
   }
@@ -72,7 +68,6 @@ export class AppComponent implements OnInit {
     let obs = this._httpService.updateTask(this.modalTask._id, data);
     obs.subscribe(data => {
       console.log("Updated");
-      
       this.getTasksFromService();
     })
   }
