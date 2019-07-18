@@ -7,14 +7,16 @@ import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpService } from "./http.service";
-import { TaskComponent } from './task/task.component';
 import { MessagesComponent } from './messages/messages.component';
+import { ModalComponent } from './modal/modal.component';
+import { ReviewComponent } from './review/review.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    TaskComponent,
-    MessagesComponent
+    MessagesComponent,
+    ModalComponent,
+    ReviewComponent
   ],
   imports: [
     BrowserModule,

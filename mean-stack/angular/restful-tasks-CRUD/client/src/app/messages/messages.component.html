@@ -1,0 +1,5 @@
+<div class="errors">
+  <ul class="alert alert-danger text-left w-50 mx-auto" role="alert" >
+    <li *ngFor="let err of errors|keyvalue">{{err.value.message}}</li>
+  </ul>
+</div>

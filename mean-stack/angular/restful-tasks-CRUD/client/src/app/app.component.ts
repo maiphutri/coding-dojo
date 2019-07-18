@@ -12,6 +12,7 @@ export class AppComponent implements OnInit {
   newTask: any;
   modalTask: any;
   selectedTask: any;
+  messages: any;
   constructor(private _httpService: HttpService) {};
 
   ngOnInit(): void {
@@ -44,10 +45,13 @@ export class AppComponent implements OnInit {
     this.selectedTask = task;
   }
 
-  onSubmit(): void {
+  createTask(): void {
     let obs = this._httpService.createTask(this.newTask);
     obs.subscribe(data => {
-      console.log(data);
+      if (data['message'] == "Error") {
+        console.log(data['error'].errors);
+        this.messages = data['error'].errors;
+      }
     })
     this.newTask = {title: "", description: ""};
     this.getTasksFromService();

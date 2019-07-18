@@ -2,7 +2,8 @@
 <div class="container text-center">
   <h1>Restful Tasks API</h1>
   <h2>New Task</h2>
-  <form class="text-left  w-25 mx-auto" (submit)="onSubmit()">
+  <app-messages *ngIf="messages" [errors]="messages"></app-messages>
+  <form class="text-left  w-25 mx-auto" (submit)="createTask()">
     <div class="form-group">
       <input type="text" class="form-control" name="newTask.title" [(ngModel)]="newTask.title" placeholder="Title" >
     </div>
@@ -25,14 +26,14 @@
           {{task.title}}
         </div>
         <div class="col-4 text-left">
-          <button class="btn btn-info btn-sm" (click)="showTask(task)">Show</button>
-          <button class="btn btn-warning btn-sm ml-2 edit-btn" (click)="editModal(basicModal, task)" data-id={{task._id}}>Edit</button>
+          <a class="btn btn-info btn-sm" (click)="showTask(task)" href="#task">Show</a>
+          <button class="btn btn-warning btn-sm ml-2" (click)="editModal(basicModal, task)" data-id={{task._id}}>Edit</button>
           <button class="btn btn-danger btn-sm ml-2" (click)="deleteTask(task._id)">Delete</button>
         </div>
       </div>
     </ng-container>
   </div>
-  <app-task class="mt-5" *ngIf="selectedTask" [taskToShow]="selectedTask"></app-task>
+  <app-task class="mt-5" *ngIf="selectedTask" [taskToShow]="selectedTask" id="task"></app-task>
 
   <div mdbModal #basicModal="mdbModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myBasicModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
@@ -44,7 +45,7 @@
           <h4 class="modal-title w-100" id="myModalLabel">Edit Task</h4>
         </div>
         <form (submit)="updateTask($event)">
-          <div class="modal-body" (submit)="updateTask($event)">
+          <div class="modal-body">
             <div class="md-form">
               <input mdbInput type="text" id="form1" class="form-control" [value]="modalTask.title" name="title">
               <label for="form1" class="modal-title">Title</label>

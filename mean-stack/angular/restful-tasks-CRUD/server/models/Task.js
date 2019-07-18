@@ -10,8 +10,8 @@ const TaskSchema = new mongoose.Schema({
     type: String,
     default: shortid.generate
   },
-  title: String,
-  description: {type: String, default: ""},
+  title: {type: String, minlength: [2, "Title must be at least 2 characters"]},
+  description: {type: String, minlength: [10, "Description must be at least 10 characters"]},
   completed: {type: Boolean, default: false},
 }, { timestamps: true})
 
