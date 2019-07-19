@@ -1,0 +1,20 @@
+<div class="container">
+  <h2>Create a new product</h2>
+  <app-messages *ngIf="messages" [errors]="messages"></app-messages>
+  <form (submit)=onSubmit($event)>
+    <div class="md-form w-50">
+      <input type="text" class="form-control" name="newProduct.title" [(ngModel)]="newProduct.title">
+      <label for="form1">Title</label>
+    </div>
+    <div class="md-form w-50">
+      <input type="text" class="form-control" name="newProduct.price" [(ngModel)]="newProduct.price">
+      <label for="form1">Price</label>
+    </div>
+    <div class="md-form w-50">
+      <input type="text" class="form-control" name="newProduct.img" [(ngModel)]="newProduct.img">
+      <label for="form1">Img Url</label>
+    </div>
+    <button type='submit' class='btn btn-primary'>Create</button>
+    <button type='submit' [routerLink]="['/products']" class='btn btn-secondary'>Cancle</button>
+  </form>
+</div>
