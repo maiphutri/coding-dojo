@@ -1,0 +1,12 @@
+/* You can add global styles to this file, and also import other style files */
+.pro-rev {
+  border: 1px solid purple;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.child {
+  border: 1px solid green;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
