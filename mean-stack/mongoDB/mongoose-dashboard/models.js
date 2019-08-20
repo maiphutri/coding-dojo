@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 
 mongoose.Promise = require("bluebird");
-mongoose.connect("mongodb://localhost/mongoose_dashboard")
+mongoose.connect("mongodb://localhost/mongoose_dashboard", {useNewUrlParser: true})
 
 const MongooseSchema =  new mongoose.Schema({
   name: String,

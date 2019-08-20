@@ -44,7 +44,7 @@ module.exports = {
       price: price,
       img: postData.img
     };
-    Product.findByIdAndUpdate(id, {$set: updateProduct}, {runValidators: true}).then(product => {
+    Product.findByIdAndUpdate(id, {$set: updateProduct}, {runValidators: true, new: true}).then(product => {
       callback(null, product);
     })
     .catch(err => callback(err));

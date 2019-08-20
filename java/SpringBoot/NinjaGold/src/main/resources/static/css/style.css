@@ -1,0 +1,54 @@
+@charset "UTF-8";
+
+div.container {
+  margin-top: 10px;
+}
+
+
+div.card img.card-img-top {
+  height: 140px;
+}
+
+div.card {
+  border: 1px solid black;
+  text-align: center;
+}
+
+#activities {
+  margin-top: 20px;
+}
+
+div.activities {
+  border: 1px solid black;
+  width: 100%;
+  height: 180px;
+}
+
+div.activities {
+  overflow: auto;
+}
+
+div.activities ul {
+  list-style: none;
+  padding: 0 0 0 10px;
+}
+
+div.activities li.earned {
+  color: limegreen;
+}
+
+div.activities li.lost {
+  color: red;
+}
+
+div.header h4, form.reset-btn {
+  display: inline-block;
+}
+
+div.header form.reset-btn {
+  margin-left: 800px;
+  vertical-align: top;
+  margin-top: 0;
+
+}
+

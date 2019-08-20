@@ -21,10 +21,10 @@ export class HttpService {
   }
 
   update(id:string, data:any) {
-    return this._http.post(`/api/products/${id}`, data);
+    return this._http.put(`/api/products/${id}`, data);
   }
 
   delete(id:string) {
-    return this._http.get(`/api/products/${id}/delete`);
+    return this._http.delete(`/api/products/${id}`);
   }
 }
