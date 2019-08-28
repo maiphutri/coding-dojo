@@ -1,0 +1,6 @@
+
+!ENTRY org.eclipse.core.jobs 2 2 2019-08-23 09:28:17.164
+!MESSAGE Job found still running after platform shutdown.  Jobs should be canceled by the plugin that scheduled them during shutdown: com.genuitec.eclipse.code.core.quickopen.internal.QuickOpenEventBus$QuickOpenPickEventWorker
+
+!ENTRY org.eclipse.core.jobs 2 2 2019-08-23 09:28:17.164
+!MESSAGE Job found still running after platform shutdown.  Jobs should be canceled by the plugin that scheduled them during shutdown: com.genuitec.eclipse.code.core.quickopen.internal.QuickOpenEventBus$QuickOpenChangeEventWorker

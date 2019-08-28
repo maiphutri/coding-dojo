@@ -1,0 +1,5 @@
+#message-box {
+	list-style: none;
+	overflow: scroll;
+	height: 50vh;
+}

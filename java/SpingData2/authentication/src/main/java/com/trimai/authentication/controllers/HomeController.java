@@ -13,11 +13,19 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 import com.trimai.authentication.models.User;
 import com.trimai.authentication.services.UserService;
+import com.trimai.authentication.validator.UserValidator;
 
 @Controller
 public class HomeController {
 	@Autowired
 	private UserService uS;
+	@Autowired
+	private UserValidator uV;
+	
+	public HomeController(UserService uS, UserValidator uV) {
+		this.uS = uS;
+		this.uV = uV;
+	}
 	
 	@GetMapping("/home")
 	public String home(HttpSession session, Model model) {
@@ -62,6 +70,7 @@ public class HomeController {
 	
 	@PostMapping("/register")
 	public String createUser(@Valid @ModelAttribute("user") User user, BindingResult result, HttpSession session) {
+		uV.validate(user, result);
 		if (result.hasErrors()) {
 			return "register.jsp";
 		}

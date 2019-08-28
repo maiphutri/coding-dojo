@@ -1,4 +1,4 @@
-package com.trimai.countries;
+package com.trimai.events;
 
 import org.apache.catalina.connector.Connector;
 import org.springframework.boot.SpringApplication;
@@ -7,11 +7,12 @@ import org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactor
 import org.springframework.context.annotation.Bean;
 
 @SpringBootApplication
-public class CountriesApplication {
+public class CoursesApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(CountriesApplication.class, args);
+		SpringApplication.run(CoursesApplication.class, args);
 	}
+	
 	@Bean
     public TomcatServletWebServerFactory servletContainer() {
         TomcatServletWebServerFactory tomcat = new TomcatServletWebServerFactory();
