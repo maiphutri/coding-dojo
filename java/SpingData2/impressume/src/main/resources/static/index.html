@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="css/superslides.css">
+  <link rel="stylesheet" href="css/owl.carousel.min.css ">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="shortcut icon" href="TemplateData/favicon.ico">
+  <link rel="stylesheet" href="TemplateData/style.css">
+  <title>Tri Mai - Portfolio Website</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="TemplateData/UnityProgress.js"></script>
+  <script src="Build/UnityLoader.js"></script>
+  <script>
+    var unityInstance = UnityLoader.instantiate("unityContainer", "Build/Tri.json", {onProgress: UnityProgress});
+  </script>
+</head>
+<body>
+  <div id="slides">
+    <div class="overlay"></div>
+    <div class="slides-container">
+      <img src="img/slice3.jpg" alt="macbook">
+      <img src="img/slice2.jpg" alt="work place">
+      <img src="img/slice1.jpg" alt="team work">
+    </div>
+
+    <div class="titleMessage">
+      <div class="heading">
+        <p class="main">Tri Mai</p>
+        <p class="sub typed"></p>
+      </div>
+    </div>
+
+    <nav class="slides-navigation">
+      <a href="#" class="next mr-1"><img src="icons/next.png" alt="next button"></a>
+      <a href="#" class="prev ml-1"><img src="icons/back.png" alt="next button"></a>
+    </nav>
+  </div>
+  <div id="about" class="section">
+    <div class="container mt-5">
+      <div class="row">
+        <div class="col-md-5">
+          <img class="aboutImage" src="img/about.png" alt="about image">
+        </div>
+        <div class="col-md-7">
+          <h4>My name is Tri Mai</h4>
+          <p>
+            Hi there! I'm a Software Developer from Los Angeles, California. My background offers a demonstrated ability to excel in programming operations, with an excellent base of knowledge that includes web development and CNC programming. 
+            The knowledge that I have gained will serve as the foundation of the success that I would bring to your company in this position.
+          </p>
+          <p>Recognized for communication, collaboration and analytical skills, I have proven my ability to employ creative problem solving in a time-sensitive environment as a CNC Programmer for Arconic.  I offer a professional dedication to excellence, and a willingness to go ‘above and beyond’ to ensure success.</p>
+          <button class="btn btn-primary text-white m-5" id="gameBtn">Play Game</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Game Modal -->
+  <div id="gameModal" class="modal">
+      <div class="webgl-content">
+        <div id="unityContainer" style="width: 50vw; height: 90vh"></div>
+        <div class="footer">
+          <div class="fullscreen" onclick="unityInstance.SetFullscreen(1)"></div>
+          <div class="title">Impressume</div>
+        </div>
+      </div>
+  </div>
+
+  <p>Score: <span id="score"></span></p>
+
+  <div id="skills" class="skillSection">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 text-center mt-5">
+            <h2 class="pb-3">TECHNICAL SKILLS</h2>
+            <p class="pb-3">A representation of my proficiency in each skill</p>
+          </div>
+
+          <div class="owl-carousel owl-theme">
+            <div class="skill">
+              <span class="chart mb-2" data-percent="50%">
+                <span class="percent">50</span>
+                <canvas height="152" width="152"></canvas>
+              </span>
+              <h4>HTML</h4>
+            </div>
+
+            <div class="skill">
+              <span class="chart mb-2" data-percent="40%">
+                <span class="percent">40</span>
+                <canvas height="152" width="152"></canvas>
+              </span>
+              <h4>CSS</h4>
+            </div>
+
+            <div class="skill">
+              <span class="chart mb-2" data-percent="80%">
+                <span class="percent">80</span>
+                <canvas height="152" width="152"></canvas>
+              </span>
+              <h4>JavaScript</h4>
+            </div>
+
+            <div class="skill">
+              <span class="chart mb-2" data-percent="60%">
+                <span class="percent">60</span>
+                <canvas height="152" width="152"></canvas>
+              </span>
+              <h4>Java</h4>
+            </div>
+
+            <div class="skill">
+              <span class="chart mb-2" data-percent="70%">
+                <span class="percent">70</span>
+                <canvas height="152" width="152"></canvas>
+              </span>
+              <h4>Python</h4>
+            </div>
+
+            <div class="skill">
+              <span class="chart mb-2" data-percent="70%">
+                <span class="percent">70</span>
+                <canvas height="152" width="152"></canvas>
+              </span>
+              <h4>NodeJS</h4>
+            </div>
+
+            <div class="skill">
+              <span class="chart mb-2" data-percent="60%">
+                <span class="percent">60</span>
+                <canvas height="152" width="152"></canvas>
+              </span>
+              <h4>ReactJS</h4>
+            </div>
+
+            <div class="skill">
+              <span class="chart mb-2" data-percent="60%">
+                <span class="percent">60</span>
+                <canvas height="152" width="152"></canvas>
+              </span>
+              <h4>Angular</h4>
+            </div>
+
+            <div class="skill">
+              <span class="chart mb-2" data-percent="50%">
+                <span class="percent">50</span>
+                <canvas height="152" width="152"></canvas>
+              </span>
+              <h4>MySQL</h4>
+            </div>
+
+            <div class="skill">
+              <span class="chart mb-2" data-percent="50%">
+                <span class="percent">50</span>
+                <canvas height="152" width="152"></canvas>
+              </span>
+              <h4>MongoDB</h4>
+            </div>
+
+            <div class="skill">
+              <span class="chart mb-2" data-percent="50%">
+                <span class="percent">50</span>
+                <canvas height="152" width="152"></canvas>
+              </span>
+              <h4>Django</h4>
+            </div>
+
+            <div class="skill">
+              <span class="chart mb-2" data-percent="50%">
+                <span class="percent">50</span>
+                <canvas height="152" width="152"></canvas>
+              </span>
+              <h4>Spring MVC</h4>
+            </div>
+
+            <div class="skill">
+              <span class="chart mb-2" data-percent="50%">
+                <span class="percent">50</span>
+                <canvas height="152" width="152"></canvas>
+              </span>
+              <h4>Deployment</h4>
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="contact" class="contactSection section">
+    <div class="col-md-12 text-center">
+      <p class="subHeading">Like what you see?</p>
+      <h2>I'd love to hear from you!</h2>
+      <a href="mailTo:dev.tmai@gmail.com" class="contactButton">GET IN TOUCH!</a>
+    </div>
+  </div>
+
+  <div id="about" class="portfolioSection pt-5">
+      <div class="container">
+          <div class="heading pb-4">
+            <h2>PORTFOLIO</h2>
+          </div>
+
+          <div class="itemsContainer">
+            <ul class="items">
+              <div class="row">
+              <li class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
+                <div class="item">
+                  <img src="img/fullstack.png" alt="" class="project">
+
+                  <div class="icons">
+                    <a href="img/fullstack1.png" title="View image" class="openButton" data-fancybox data-caption="Ecommerce Project">
+                      <img src="icons/search.png" />
+                    </a>
+                    <a href="http://3.82.145.158/products" target="_blank" class="projectLink">
+                      <img src="icons/link.png" />
+                    </a>
+                  </div>
+
+                  <div class="imageOverlay"></div>
+                </div>
+                <p class="text-center">Full Stack</p>
+              </li>
+
+              <li class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
+                <div class="item">
+                  <img src="img/java.png" alt="" class="project">
+
+                  <div class="icons">
+                    <a href="img/java1.png" title="View image" class="openButton" data-fancybox data-caption="Full Stack Project">
+                      <img src="icons/search.png" />
+                    </a>
+                    <a href="http://54.83.184.180/" target="_blank" class="projectLink">
+                      <img src="icons/link.png" />
+                    </a>
+                  </div>
+                  <div class="imageOverlay"></div>
+                </div>
+                <p class="text-center">Java Spring</p>
+              </li>
+              
+              <li class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
+                <div class="item">
+                  <img src="img/react.png" alt="" class="project">
+
+                  <div class="icons">
+                    <a href="img/react1.png" title="View image" class="openButton" data-fancybox data-caption="React Music Project">
+                      <img src="icons/search.png" />
+                    </a>
+                    <a href="https://maiphutri-reactmusic.herokuapp.com/" target="_blank" class="projectLink">
+                      <img src="icons/link.png" />
+                    </a>
+                  </div>
+
+                  <div class="imageOverlay"></div>
+                </div>
+                <p class="text-center">React Music App</p>
+              </li>
+
+              <li class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
+                <div class="item">
+                  <img src="img/wiki.png" alt="" class="project">
+
+                  <div class="icons">
+                    <a href="img/wiki1.png" title="View image" class="openButton" data-fancybox data-caption="Wiki App Project">
+                      <img src="icons/search.png" />
+                    </a>
+                    <a href="https://maiphutri-blocipedia.herokuapp.com/" target="_blank" class="projectLink">
+                      <img src="icons/link.png" />
+                    </a>
+                  </div>
+
+                  <div class="imageOverlay"></div>
+                </div>
+                <p class="text-center">Wiki Stripe Api</p>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+  <script src="js/jquery.superslides.min.js"></script>
+  <script src="js/jquery.easypiechart.min.js"></script>
+  <script src="js/owl.carousel.min.js"></script>
+  <script src="js/typed.min.js"></script> 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="https://unpkg.com/isotope-layout@3.0.6/dist/isotope.pkgd.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>

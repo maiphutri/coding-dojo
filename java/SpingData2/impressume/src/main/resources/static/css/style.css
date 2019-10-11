@@ -1,0 +1,259 @@
+body {
+  font-size: 16px;
+  color: #333;
+  background-color: #fff;
+  letter-spacing: 1px;
+}
+.overlay {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 3;
+  background-color: rgba(0,0,0, 0.3);
+}
+
+.titleMessage {
+  position: absolute;
+  width: 100%;
+  top: 31%;
+  text-align: center;
+  z-index: 5;
+}
+
+.titleMessage .heading p {
+  color: #fff;
+  text-shadow: 0px 2px 5px rgba(0,0,0,0.4);
+  font-weight: 100;
+  letter-spacing: 7px;
+}
+
+.titleMessage .heading .main {
+  font-size: 50px;
+}
+
+.titleMessage .heading .sub {
+  font-size: 23px;
+}
+
+.slides-navigation {
+  z-index: 6;
+}
+
+.section {
+  padding: 100px 0;
+}
+
+.aboutImage {
+  max-width: 100%;
+}
+
+.skillSection {
+  height: 75vh;
+  background-color: #03a9f4;
+  color: #fff;  
+}
+
+.skill {
+  text-align: center;
+  margin-left: 10px;
+}
+
+.chart {
+  position: relative;
+  width: 152px;
+  height: 152px;
+  display: inline-block;
+  text-align: center;
+}
+
+.chart canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.chart .percent {
+  color: #311b92;
+  line-height: 152px;
+  display: inline-block;
+  font-size: 35px;
+}
+
+.chart .percent:after {
+  content:'%'
+}
+
+.contactButton {
+  padding: 15px 20px;
+  display: inline-block;
+  margin-top: 20px;
+  border: 1px solid #333;
+  border-radius: 2px;
+}
+
+.contactButton:hover {
+  text-decoration: none;
+  color: #fff ;
+  background-color: #03a9f4;
+}
+
+.portfolioSection {
+  background-color: #03a9f4;
+  color: #fff;
+}
+
+.aboutImage {
+  height: 80vh;
+  width: 30vw;
+}
+
+.filter a {
+  color: #e1f5fe;
+  border: 1px solid #e1f5fe;
+  padding: 10px 18px;
+  display: block;
+}
+
+.filter li {
+  display: inline-block;
+  padding: 5px;
+}
+
+.filter .current {
+  background-color: #fff;
+  border-color: #fff;
+  color: #03a9f4;
+}
+
+.portfolioSection {
+  height: 80vh;
+}
+
+.filter {
+  text-align: center;
+  width: 100%;
+}
+
+.portfolioSection .heading {
+  width: 100%;
+  text-align: center;
+}
+
+img.project {
+  height: 40vh;
+  width: 40vh;
+}
+
+.items li {
+  display: inline-block;
+  padding: 5px;
+}
+
+.itemsContainer {
+  width: 100%;
+}
+
+.items .item {
+  position: relative;
+  display: block;
+  overflow: hidden;
+}
+
+.items .icons {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin: -20px auto 0 -35px;
+  text-align: center;
+  z-index: 3;
+}
+
+.icons a {
+  width: 40px;
+  height: 40px;
+  background-color: #03a9f4;
+  position: relative;
+  display: inline-block;
+  border-radius: 5px;
+
+  -webkit-transition: all 0.2s linear, 0.3s;
+  -moz-transition: all 0.2s linear, 0.3s;
+  -o-transition: all 0.2s linear, 0.3s;
+  -ms-transition: all 0.2s linear, 0.3s;
+  transition: all 0.2s linear, 0.3s;
+}
+
+.icons a img {
+  margin-top: 6px;
+}
+
+.item .imageOverlay {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  opacity: 0;
+
+  -webkit-transition: all 0.2s linear, 1s;
+  -moz-transition: all 0.2s linear, 1s;
+  -o-transition: all 0.2s linear, 1s;
+  -ms-transition: all 0.2s linear, 1s;
+  transition: all 0.2s linear, 1s;
+}
+
+.items .item:hover .imageOverlay {
+  opacity: 1;
+}
+
+.items .openButton {
+  float: left;
+  left: -200px;
+}
+
+.items .projectLink {
+  float: right;
+  right: -200px;
+}
+
+.items .item:hover .openButton {
+  left: -5px;
+}
+
+.items .item:hover .projectLink {
+  right: -5px;
+}
+
+.skillSection {
+  height: 80vh;
+}
+
+.owl-nav {
+  text-align: center;
+  font-size: 40px;
+}
+
+.owl-nav button:focus {
+  outline: none;
+}
+
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 10; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+.modal-content {
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
